@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Knight Bot - WhatsApp Linker</title>
+  <title>QUEEN EMILY MD V1 - WhatsApp Linker</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
   <style>
     :root {
-      --primary-color: #000000;
+      --primary-color: #111111;
       --secondary-color: #ffffff;
-      --accent-color: #f0f0f0;
-      --text-color: #000000;
+      --accent-color: #f9f9f9;
+      --text-color: #222222;
       --background-color: #ffffff;
-      --hover-color: #f5f5f5;
-      --border-color: rgba(0, 0, 0, 0.1);
+      --hover-color: #f3f3f3;
+      --border-color: rgba(0, 0, 0, 0.12);
     }
 
     * {
@@ -37,10 +37,15 @@
       width: 100%;
       max-width: 450px;
       background: var(--background-color);
-      border-radius: 16px;
-      padding: 25px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
       border: 1px solid var(--border-color);
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.15);
     }
 
     .header {
@@ -49,21 +54,21 @@
     }
 
     .logo {
-      width: 70px;
-      height: 70px;
+      width: 75px;
+      height: 75px;
       margin: 0 auto 16px;
       background: var(--primary-color);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 28px;
+      font-size: 30px;
       color: white;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 3px 14px rgba(0, 0, 0, 0.15);
     }
 
     .title {
-      font-size: 24px;
+      font-size: 25px;
       font-weight: 700;
       margin-bottom: 8px;
       color: var(--primary-color);
@@ -78,13 +83,13 @@
     .social-icons {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 14px;
       margin-bottom: 20px;
     }
 
     .social-icons a {
-      width: 44px;
-      height: 44px;
+      width: 46px;
+      height: 46px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -97,15 +102,14 @@
 
     .social-icons a.youtube { background: #FF0000; }
     .social-icons a.telegram { background: #0088cc; }
-    .social-icons a.whatsapp { background: #0cfa10; }
+    .social-icons a.whatsapp { background: #25D366; }
     .social-icons a.github { background: #333; }
 
     .social-icons a:hover {
-      transform: scale(1.1);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transform: scale(1.12);
+      box-shadow: 0 5px 14px rgba(0,0,0,0.25);
     }
 
-    /* Toggle Switch Styles */
     .toggle-container {
       display: flex;
       align-items: center;
@@ -126,7 +130,6 @@
       font-size: 14px;
       font-weight: 500;
       transition: all 0.3s ease;
-      position: relative;
     }
 
     .toggle-option.active {
@@ -134,13 +137,10 @@
       color: var(--secondary-color);
     }
 
-    .toggle-option:not(.active) {
-      color: var(--text-color);
-    }
-
     .toggle-option:hover:not(.active) {
       background: var(--background-color);
     }
+
     .copy-btn {
       width: 100%;
       padding: 12px;
@@ -154,20 +154,17 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
+      transition: all 0.3s ease;
     }
 
     .copy-btn:hover {
       background: var(--background-color);
       border-color: var(--primary-color);
+      transform: scale(1.02);
     }
 
     .input-group {
       margin-bottom: 20px;
-      transition: all 0.3s ease;
-    }
-
-    .input-group.hidden {
-      display: none;
     }
 
     .input-label {
@@ -185,12 +182,13 @@
       background: var(--background-color);
       color: var(--text-color);
       font-size: 15px;
+      transition: all 0.3s ease;
     }
 
     .input-field:focus {
       outline: none;
       border-color: var(--primary-color);
-      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
     }
 
     .generate-btn {
@@ -208,12 +206,8 @@
     }
 
     .generate-btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
-
-    .generate-btn.hidden {
-      display: none;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 14px rgba(0, 0, 0, 0.18);
     }
 
     .code-display {
@@ -256,7 +250,7 @@
     }
 
     .success-message {
-      color: #000aff;
+      color: #0066ff;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -300,22 +294,13 @@
     @media (max-width: 480px) {
       .container {
         padding: 20px;
-        border-radius: 12px;
+        border-radius: 14px;
         max-width: 400px;
-      }
-
-      .code-display {
-        font-size: 16px;
-        min-height: 50px;
       }
 
       .qr-image {
         max-width: 240px;
         max-height: 240px;
-      }
-
-      .qr-display {
-        padding: 20px;
       }
     }
   </style>
@@ -324,7 +309,7 @@
   <div class="container">
     <div class="header">
       <div class="logo"><i class="fas fa-robot"></i></div>
-      <h1 class="title">Knight Bot</h1>
+      <h1 class="title">QUEEN EMILY MD V1</h1>
       <p class="subtitle">Link your WhatsApp device</p>
       <div class="social-icons">
         <a href="https://www.youtube.com/@mr_unique_hacker?sub_confirmation=1" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
@@ -373,28 +358,22 @@
     </button>
 
     <div class="footer">
-      <p>© 2025 Mr Unique Hacker | Knight Bot</p>
+      <p>© 2025 C.O TECH | QUEEN EMILY MD V1</p>
     </div>
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.0.0-alpha.1/axios.min.js"></script>
   <script>
     let currentMode = 'pair';
-
-    // Toggle functionality
     document.querySelectorAll('.toggle-option').forEach(option => {
       option.addEventListener('click', function() {
         const mode = this.dataset.mode;
         if (mode === currentMode) return;
 
-        // Update active state
         document.querySelectorAll('.toggle-option').forEach(opt => opt.classList.remove('active'));
         this.classList.add('active');
-
-        // Update mode
         currentMode = mode;
 
-        // Update button and input visibility
         const submitBtn = document.getElementById('submit');
         const inputGroup = document.getElementById('inputGroup');
         
@@ -405,11 +384,9 @@
         } else {
           submitBtn.classList.add('hidden');
           inputGroup.classList.add('hidden');
-          // Auto-generate QR code when QR mode is selected
           generateQRCode();
         }
 
-        // Clear displays
         document.getElementById('codeDisplay').innerHTML = 'Your pair code will appear here';
         document.getElementById('qrDisplay').style.display = 'none';
         document.getElementById('codeDisplay').style.display = 'flex';
@@ -482,6 +459,7 @@
         loadingSpinner.style.display = "none";
       }
     });
+
     function copyCode() {
       const codeDisplay = document.getElementById("codeDisplay").innerText;
       const code = codeDisplay.replace('CODE: ', '');
