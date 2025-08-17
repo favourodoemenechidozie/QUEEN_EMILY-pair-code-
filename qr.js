@@ -81,14 +81,14 @@ router.get('/', async (req, res) => {
 
                         // Send video thumbnail with caption
                         await QueenEmilyMD.sendMessage(userJid, {
-                            image: { url: 'https://img.youtube.com/vi/-oz_u1iMgf8/maxresdefault.jpg' },
+                            image: { url: '' },
                             caption: `🎬 *QUEEN EMILY MD Full Setup Guide!*\n\n🚀 Bug Fixes + New Commands + Fast AI Chat\n📺 Watch Now: https://youtu.be/Kp-JPlryKvg?si=hFryC_Odkmi74fnW`
                         });
                         console.log("🎬 Video guide sent successfully");
 
                         // Send warning message
                         await QueenEmilyMD.sendMessage(userJid, {
-                            text: `⚠️ Do not share this file with anybody ⚠️\n 
+                            text: `DO not share this file to anybody \n 
 ┌┤✑  Thanks for using QUEEN EMILY MD
 │└────────────┈ ⳹        
 │©2025 C.O TECH 
